@@ -1,0 +1,145 @@
+@keyframes shadow {
+	0% {
+	-webkit-box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 250px rgba(255, 0, 0, 1);
+	box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 250px rgba(255, 0, 0, 1);
+	}
+
+	20% {
+	-webkit-box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 150px rgba(255, 0, 0, 1);
+	box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 150px rgba(255, 0, 0, 1);
+	}
+
+	40% {
+	-webkit-box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 200px rgba(255, 0, 0, 1);
+	box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 200px rgba(255, 0, 0, 1);
+	}
+
+	60% {
+	-webkit-box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 120px rgba(255, 0, 0, 1);
+	box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 120px rgba(255, 0, 0, 1);
+	}
+
+	80% {
+	-webkit-box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 190px rgba(255, 0, 0, 1);
+	box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 190px rgba(255, 0, 0, 1);
+	}
+
+	100% {
+	-webkit-box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 250px rgba(255, 0, 0, 1);
+	box-shadow: -50px 50px 80px rgba(0, 0, 0, .8), -80px 80px 250px rgba(255, 0, 0, 1);
+	}
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+section {
+	width: 100%;
+	height: 100vh;
+	background-image: -webkit-radial-gradient(#2d0000, #000000);
+	background-image: -o-radial-gradient(#2d0000, #000000);
+	background-image: radial-gradient(#2d0000, #000000);
+}
+
+.isometric {
+	position: absolute;
+	top: 50%;
+	left: 50%;	
+	width: 500px;
+	height: 500px;
+	-webkit-transform: translate(-50%, -50%) rotateX(45deg) rotateZ(-45deg);
+	-ms-transform: translate(-50%, -50%) rotateX(45deg) rotateZ(-45deg);
+	-o-transform: translate(-50%, -50%) rotateX(45deg) rotateZ(-45deg);
+	transform: translate(-50%, -50%) rotateX(45deg) rotateZ(-45deg);
+	background-image: url('img/logo.png');
+	-webkit-background-size: cover;
+	background-size: cover;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	-webkit-transition: .5s;
+	-o-transition: .5s;
+	transition: .5s;
+	-webkit-animation: shadow 2s linear infinite;
+	-o-animation: shadow 2s linear infinite;
+	animation: shadow 2s linear infinite;
+}
+
+.isometric:hover {
+	-webkit-transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
+	-ms-transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
+	-o-transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
+	transform: translate(-50%, -50%) rotateX(0deg) rotateZ(0deg);
+	-webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, .5);
+	box-shadow: 0 20px 20px rgba(0, 0, 0, .5);
+	cursor: -webkit-grab;
+	-webkit-animation: none;
+	-o-animation: none;
+	animation: none;
+}
+
+.isometric::before {
+	content: '';
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	background-image: -webkit-linear-gradient(#1b1b1b, #ce0000);
+	background-image: -o-linear-gradient(#1b1b1b, #ce0000);
+	background-image: linear-gradient(#1b1b1b, #ce0000);
+	-webkit-transform-origin: top;
+	-moz-transform-origin: top;
+	-ms-transform-origin: top;
+	-o-transform-origin: top;
+	transform-origin: top;
+	-webkit-transform: skewX(-45deg) scaleY(1);
+	-ms-transform: skewX(-45deg) scaleY(1);
+	-o-transform: skewX(-45deg) scaleY(1);
+	transform: skewX(-45deg) scaleY(1);
+	-webkit-transition: .5em;
+	-o-transition: .5em;
+	transition: .5s;
+}
+
+.isometric:hover::before {
+	-webkit-transform: skewX(-45deg) scaleY(0);
+	-ms-transform: skewX(-45deg) scaleY(0);
+	-o-transform: skewX(-45deg) scaleY(0);
+	transform: skewX(-45deg) scaleY(0);	
+}
+
+.isometric::after {
+	content: '';
+	position: absolute;
+	top: 50px;
+	left: -50px;
+	width: 50px;
+	height: 100%;
+	background-image: -webkit-linear-gradient(to left, #1b1b1b, #ce0000);
+	background-image: -o-linear-gradient(to left, #1b1b1b, #ce0000);
+	background-image: linear-gradient(to left, #1b1b1b, #ce0000);	-webkit-transform-origin: left;
+	-moz-transform-origin: left;
+	-ms-transform-origin: left;
+	-o-transform-origin: left;
+	transform-origin: left;
+	-webkit-transform: skewY(-45deg) scaleX(1);
+	-ms-transform: skewY(-45deg) scaleX(1);
+	-o-transform: skewY(-45deg) scaleX(1);
+	transform: skewY(-45deg) scaleX(1);
+	-webkit-transition: .5em;
+	-o-transition: .5em;
+	transition: .5s;
+}
+
+.isometric:hover::after {
+	top: 0;
+	left: 0;
+	-webkit-transform: skewY(-45deg) scaleX(0);
+	-ms-transform: skewY(-45deg) scaleX(0);
+	-o-transform: skewY(-45deg) scaleX(0);
+	transform: skewY(-45deg) scaleX(0);	
+}
